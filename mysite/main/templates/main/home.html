@@ -1,0 +1,42 @@
+{%extends 'main/header.html'%}
+
+
+{%block content%}
+<div class="row">
+    {% for tut in tutorials %}
+        <div class="col s12 m6 l4">
+          <div class="card blue-grey darken-1 hoverable">
+            <div class="card-content white-text">
+              <span class="card-title">{{tut.tutorial_title}}</span>
+              <p style="font-size:70%">Published {{tut.tutorial_published}}</p>
+              <p>{{tut.tutorial_content|safe}}</p>
+            </div>
+          </div>
+        </div>
+    {% endfor %}
+
+    {% for car in vehicles %}
+        <div class="col s12 m6 l4">
+          <div class="card blue-grey darken-1 hoverable">
+            <div class="card-content white-text">
+              <span class="card-title">{{car.vehicle_name}}</span>
+              <p style="font-size:70%"> {{car.reg_no}}</p>
+              <p>{{car.yom|safe}}</p>
+            </div>
+          </div>
+        </div>
+    {% endfor %}
+
+    {% for ess in essays %}
+        <div class="col s12 m6 l4">
+          <div class="card blue-grey darken-1 hoverable">
+            <div class="card-content white-text">
+              <span class="card-title">{{ess.essay_title}}</span>
+              <p style="font-size:70%"> {{ess.essay_published}}</p>
+              <p>Published {{ess.essay_content}}</p>
+              <p>{{car.yom|safe}}</p>
+            </div>
+          </div>
+        </div>
+    {% endfor %}
+{%endblock%}

@@ -1,0 +1,23 @@
+{% extends "main/header.html" %}
+
+{% block content %}
+<h1>Welcome</h1>
+
+<form action='new_car/' method='POST'>
+{% csrf_token %}
+    <title>Input details here</title>
+    Car type: 
+    <input type='text' name='vehicle_name' placeholder='probox'>
+    Reg No: 
+    <input type='text' name='reg_no' placeholder='KCS 001J'>
+    YOM: 
+    <input type='text' name='yom' placeholder='2000'>
+    
+    <button class='btn pink' type='submit' name='save'>Save</button>
+
+
+</form>
+
+
+
+{% endblock %}
